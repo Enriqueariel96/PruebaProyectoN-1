@@ -8,9 +8,9 @@ app=FastAPI(title='Consultas por Streaming',
 description= ' En esta API se podran realizar consultas a los datos de la plataforma Steam teniendo un total de 5 funciones',
 version='1.1.1.1')
 
-steam_games = pd.read_parquet(r'C:\\Users\\licle\\Desktop\\Prep Henry\\Proyecto Integrados n1\\PI MLOps - STEAM\\Datasets\\steam_games.parquet')
-items_def = pd.read_parquet(r'C:\\Users\\licle\\Desktop\\Prep Henry\\Proyecto Integrados n1\\PI MLOps - STEAM\\Datasets\\users_items.parquet')
-reviews_def = pd.read_parquet(r'C:\\Users\\licle\\Desktop\\Prep Henry\\Proyecto Integrados n1\\PI MLOps - STEAM\\Datasets\\user_reviews.parquet')
+steam_games = pd.read_parquet('Datasets/steam_games.parquet')
+items_def = pd.read_parquet('Datasets/users_items.parquet')
+reviews_def = pd.read_parquet('Datasets/user_reviews.parquet')
 
 @app.get('/PlayTimeGenre')
 async def PlayTimeGenre(genero : str):
